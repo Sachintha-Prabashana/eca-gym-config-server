@@ -1,0 +1,22 @@
+spring:
+  mvc:
+    problemdetails:
+      enabled: true
+
+  datasource:
+    url: jdbc:mysql://localhost:14500/db-fitbuddy-fitness?createDatabaseIfNotExist=true
+    username: root
+    password: Sachintha@2003
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+
+server:
+  port: 8003

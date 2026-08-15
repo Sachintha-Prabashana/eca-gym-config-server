@@ -1,0 +1,34 @@
+spring:
+
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: member-service
+              uri: lb://MEMBER-SERVICE
+              predicates:
+                - Path=/api/v1/members/**
+
+            - id: workout-service
+              uri: lb://WORKOUT-SERVICE
+              predicates:
+                - Path=/api/v1/workouts/**
+
+            - id: fitness-service
+              uri: lb://FITNESS-SERVICE
+              predicates:
+                - Path=/api/v1/fitnesses/**
+
+          default-filters:
+            - PreserveHostHeader
+
+          globalcors:
+            cors-configurations:
+              '[/**]':
+                allowedOrigins: "*"
+                allowed-methods: "*"
+                allowed-headers: "*"
+
+server:
+  port: 8000
