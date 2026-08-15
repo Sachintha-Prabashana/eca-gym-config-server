@@ -28,6 +28,10 @@ server:
   port: 8001
   forward-headers-strategy: framework
 
-app:
-  storage:
-    path: ${user.home}/.ijse/eca/students
+file:
+  upload-dir: ${user.home}/.ijse/eca/fitbuddy/profile-images
+
+jwt:
+  secret: a-very-secure-jwt-secret-key-that-should-be-at-least-256-bits-long
+  expiration: 900000 # 15 minutes in ms
+  refresh-expiration: 604800000 # 7 days in ms
