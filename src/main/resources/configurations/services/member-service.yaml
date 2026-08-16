@@ -30,4 +30,9 @@ server:
 
 file:
   upload-dir: ${user.home}/.ijse/eca/fitbuddy/profile-images
+
+admin:
+  default:
+    email: admin@fitbuddy.com
+    password: Admin@123!
 
