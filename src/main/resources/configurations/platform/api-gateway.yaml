@@ -20,8 +20,19 @@ spring:
               predicates:
                 - Path=/api/v1/fitnesses/**
 
+            - id: member-users
+              uri: lb://MEMBER-SERVICE
+              predicates:
+                - Path=/api/v1/users/**
+
+            - id: member-trainers
+              uri: lb://MEMBER-SERVICE
+              predicates:
+                - Path=/api/v1/trainers/**
+
           default-filters:
             - PreserveHostHeader
+            - AuthenticationFilter
 
           globalcors:
             cors-configurations:
