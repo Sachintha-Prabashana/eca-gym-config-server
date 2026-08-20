@@ -18,7 +18,7 @@ spring:
             - id: fitness-service
               uri: lb://FITNESS-SERVICE
               predicates:
-                - Path=/api/v1/fitnesses/**
+                - Path=/api/v1/fitness-reports/**
 
             - id: member-users
               uri: lb://MEMBER-SERVICE
